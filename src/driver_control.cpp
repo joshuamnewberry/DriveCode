@@ -3,8 +3,6 @@
 #include "robot.h"
 #include "odometry.h"
 #include "pid.h"
-#include "auton_selector.h"
-#include "autonomous.h"
 using namespace std;
 using namespace Drive;
 using namespace PID;
