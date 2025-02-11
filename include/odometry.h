@@ -10,7 +10,6 @@ class Odometry
         double x;
         double y;
         double h;
-        double startH;
         double deltaX;
         double deltaY;
         double deltaH;
@@ -19,8 +18,6 @@ class Odometry
         double deltaLDist;
         double deltaRDist;
         double deltaAvgDist;
-        double currentLMDPosition;
-        double currentRMDPosition;
         double currentInertialRotation;
     
     public:

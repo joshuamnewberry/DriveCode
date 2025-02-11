@@ -10,11 +10,10 @@ using namespace PID;
 void pre_auton(void)
 {
     // Calibrate the inertial sensor
-    Inertial.calibrate(2);
+    Inertial.calibrate(1);
     // Wait to finish calibrating
     while(Inertial.isCalibrating())
     { this_thread::sleep_for(10); }
-    odom = Odometry();
 }
 
 void autonomous(void)
