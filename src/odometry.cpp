@@ -99,13 +99,12 @@ void Odometry::updateDeltaDist()
     deltaAvgDist = ((deltaLDist + deltaRDist) / 2.0) * degreeToInchConverter;
 }
 
-// Update the Heading of the robot by averaging the inertial sensor and two wheel odometry values
+// Update the Heading of the robot using the inertial sensor
 void Odometry::updateHeading()
 {
-    double rotationPrev = currentInertialRotation;
-    currentInertialRotation = Inertial.heading();
-    h = ( (startH + ((totalLDist - totalRDist) / dist_from_center) * radianToDegreeConverter) + currentInertialRotation) / 2.0;
-    deltaH = ( ( ((deltaLDist - deltaRDist) / dist_from_center) * radianToDegreeConverter) + (currentInertialRotation - rotationPrev) ) / 2.0;
+    currentInertialRotation = getInertialRotation();
+    deltaH = currentInertialRotation - h;
+    h = currentInertialRotation;
 }
 
 // Set as a task during auton
@@ -132,18 +131,19 @@ Odometry odom = Odometry();
 // Global variable to store task instance
 thread odometryTask;
 
-int odomPrintWait = 100;
+int odomPrintWait = 0;
 // a task started by usercontrol
 void odometryFunction()
 {
     while(true)
     {
         odom.calculatePosition();
-        if (odomPrintWait <= 100)
+        if (odomPrintWait <= 250)
         {
             printf("x:%f y:%f h:%f \n", odom.getX(), odom.getY(), odom.getH());
+            odomPrintWait = 0;
         }
-        odomPrintWait--;
+        odomPrintWait++;
         this_thread::sleep_for(10);
     }
 }

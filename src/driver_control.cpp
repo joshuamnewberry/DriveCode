@@ -9,6 +9,7 @@ using namespace PID;
 
 void driver_control(void)
 {
+    odometryTask = thread(odometryFunction);
     while(1)
     {
         // Tank Drive

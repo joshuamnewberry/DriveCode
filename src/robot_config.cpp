@@ -31,13 +31,14 @@ bool RemoteControlCodeEnabled = true;
 double wheel_diameter = 2.75;
 double wheel_circ = wheel_diameter * M_PI;
 // Define Wheel Distance from center of robot
-double dist_from_center = 6.25;
+double dist_from_center = 10.5;
 // Define Unit Converters
 double inchToDegreeConverter = 360.0 / wheel_circ;
 double degreeToInchConverter = wheel_circ / 360.0;
 double radianToDegreeConverter = 180.0 / M_PI;
 double degreeToRadianConverter = M_PI / 180.0;
-double motorToWheelConverter = 600.0 / 360.0;
+double motorToWheelConverter = 360.0 / 600.0;
+double wheelToMotorConverter = 600.0 / 360.0;
 
 // Create Joystick Value variables (Used for Tank Drive and Arcade drive)
 double axis1 = Controller.Axis1.position(percent);

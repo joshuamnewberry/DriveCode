@@ -140,8 +140,8 @@ namespace PID
     {
         // Get current position of the middle motor encoders for measurement, in degrees
         // Add converted target from inches traveled to degrees in respect to wheel size
-        double targetL = odom.getLeftEncoder() + (driveTarget * inchToDegreeConverter * motorToWheelConverter);
-        double targetR = odom.getRightEncoder() + (driveTarget * inchToDegreeConverter * motorToWheelConverter);
+        double targetL = odom.getLeftEncoder() + (driveTarget * inchToDegreeConverter * wheelToMotorConverter);
+        double targetR = odom.getRightEncoder() + (driveTarget * inchToDegreeConverter * wheelToMotorConverter);
 
         // This is calculated in this order to show how error will be derived during the program
         leftError = targetL - odom.getLeftEncoder();

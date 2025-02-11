@@ -39,6 +39,7 @@ extern double degreeToInchConverter;
 extern double radianToDegreeConverter;
 extern double degreeToRadianConverter;
 extern double motorToWheelConverter;
+extern double wheelToMotorConverter;
 
 // Create Joystick Value variables (Used for Tank Drive and Arcade drive)
 extern double axis1;
