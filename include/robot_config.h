@@ -41,6 +41,9 @@ extern double degreeToRadianConverter;
 extern double motorToWheelConverter;
 extern double wheelToMotorConverter;
 
+// Create Tank/Arcade drive boolean variable
+extern bool tankDrive;
+
 // Create Joystick Value variables (Used for Tank Drive and Arcade drive)
 extern double axis1;
 extern double axis2;

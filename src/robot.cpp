@@ -123,5 +123,3 @@ namespace Drive
         RightDriveGroup.stop(bt);
     }
 };
-
-using namespace Drive;

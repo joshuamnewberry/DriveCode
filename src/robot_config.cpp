@@ -40,6 +40,9 @@ double degreeToRadianConverter = M_PI / 180.0;
 double motorToWheelConverter = 360.0 / 600.0;
 double wheelToMotorConverter = 600.0 / 360.0;
 
+// Create Tank/Arcade drive boolean variable
+bool tankDrive = true;
+
 // Create Joystick Value variables (Used for Tank Drive and Arcade drive)
 double axis1 = Controller.Axis1.position(percent);
 double axis2 = Controller.Axis2.position(percent);
