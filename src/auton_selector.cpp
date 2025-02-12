@@ -71,7 +71,7 @@ void auton_selector()
                 this_thread::sleep_for(10);
             }
         }
-        else if(Controller.ButtonX.pressing() || Controller.ButtonY.pressing())
+        else if(Controller.ButtonX.pressing())
         {
             if(side == "P")
             {
@@ -82,7 +82,23 @@ void auton_selector()
                 side = "P";
             }
             printScreen();
-            while(Controller.ButtonX.pressing() || Controller.ButtonY.pressing())
+            while(Controller.ButtonX.pressing())
+            {
+                this_thread::sleep_for(10);
+            }
+        }
+        else if(Controller.ButtonY.pressing())
+        {
+            tankDrive == !tankDrive;
+            if(tankDrive)
+            {
+                Controller.rumble("...");
+            }
+            else
+            {
+                Controller.rumble("--");
+            }
+            while(Controller.ButtonY.pressing())
             {
                 this_thread::sleep_for(10);
             }
