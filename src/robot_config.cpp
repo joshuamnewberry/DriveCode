@@ -1,4 +1,5 @@
 #include "robot_config.h"
+#include "vex.h"
 
 // Define Brain
 brain Brain = brain();

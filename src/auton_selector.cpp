@@ -1,4 +1,5 @@
 #include "auton_selector.h"
+#include "vex.h"
 #include "robot_config.h"
 
 string alliance = "R";

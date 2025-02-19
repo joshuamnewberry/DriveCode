@@ -1,4 +1,5 @@
 #include "driver_control.h"
+#include "vex.h"
 #include "robot_config.h"
 #include "robot.h"
 #include "odometry.h"

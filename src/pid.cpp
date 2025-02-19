@@ -1,4 +1,5 @@
 #include "pid.h"
+#include "vex.h"
 #include "robot_config.h"
 #include "robot.h"
 #include "odometry.h"
@@ -268,7 +269,7 @@ namespace PID
 
         // Calculate the drive distance needed, then drive towards the target
         // position:
-        double driveDistance = sqrt(((endingX - startingX) * (endingX - startingX)) + ((endingY - startingY) * (endingY - startingY)));
+        double driveDistance = sqrt(pow((endingX - startingX), 2) + pow((endingY - startingY), 2));
         drive(driveDistance); // Drive forward using PID.
     }
 };

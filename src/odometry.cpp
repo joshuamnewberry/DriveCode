@@ -1,4 +1,5 @@
 #include "odometry.h"
+#include "vex.h"
 #include "robot_config.h"
 #include "robot.h"
 

@@ -1,4 +1,5 @@
 #include "robot.h"
+#include "vex.h"
 #include "robot_config.h"
 
 namespace Drive
