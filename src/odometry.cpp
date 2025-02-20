@@ -117,7 +117,7 @@ void odometryFunction()
     while(true)
     {
         odom.calculatePosition();
-        if (odomPrintWait <= 250)
+        if (odomPrintWait >= 20)
         {
             printf("x:%f y:%f h:%f \n", odom.getX(), odom.getY(), odom.getH());
             odomPrintWait = 0;

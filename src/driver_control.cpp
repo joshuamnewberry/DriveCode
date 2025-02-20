@@ -10,6 +10,7 @@ using namespace PID;
 
 void driver_control(void)
 {
+    // Start the odometry thread
     odometryTask = thread(odometryFunction);
     while(1)
     {

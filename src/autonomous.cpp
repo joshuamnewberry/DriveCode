@@ -11,7 +11,7 @@ using namespace PID;
 void pre_auton(void)
 {
     // Calibrate the inertial sensor
-    Inertial.calibrate(1);
+    Inertial.calibrate(.25);
     // Wait to finish calibrating
     while(Inertial.isCalibrating())
     { this_thread::sleep_for(10); }
@@ -19,6 +19,7 @@ void pre_auton(void)
 
 void autonomous(void)
 {
+    // Start the odometry thread
     odometryTask = thread(odometryFunction);
 
     // Variables for testing to skip Auton menu

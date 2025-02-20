@@ -11,7 +11,7 @@ int main()
     pre_auton();
     
     // Run the auton selection function
-    auton_selector();
+    //auton_selector();
 
     // Set up Callbacks for autonomous and drivercontrol
     Competition.autonomous(autonomous);
