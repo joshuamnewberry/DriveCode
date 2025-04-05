@@ -26,8 +26,14 @@ double Odometry::getX()
 double Odometry::getY()
 { return y; }
 
-double Odometry::getH()
-{ return h; }
+double Odometry::getH(bool bounded)
+{
+    if(bounded)
+    {
+        return fmod(h, 360);
+    }
+    return h;
+}
 
 void Odometry::setPosition(double ax, double ay)
 {

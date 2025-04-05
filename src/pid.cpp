@@ -243,26 +243,25 @@ namespace PID
         // Get the current position and rotation of the robot:
         double startingX = odom.getX();
         double startingY = odom.getY();
-        double startingH = odom.getH();
+        double startingH = odom.getH(true);
 
         // Implement atan to calculate the heading that the robot needs to turn to
         // face the end point.
         double turnAngle = atan((endingX - startingX) / (endingY - startingY)) * radianToDegreeConverter;
         if(endingY - startingY < 0)
         {
-            turnAngle = turnAngle + 180.0;
+            turnAngle += 180.0;
         }
-
         turnAngle -= startingH;
 
         // Optimize turn to take the shortest turn
-        if(turnAngle > 180.0)
+        while(turnAngle > 180.0)
         {
-            turnAngle = turnAngle - 360.0;
+            turnAngle -= 360.0;
         }
-        if(turnAngle < -180.0)
+        while(turnAngle < -180.0)
         {
-            turnAngle = turnAngle + 360.0;
+            turnAngle += 360.0;
         }
 
         turn(turnAngle); // Turn using the PID

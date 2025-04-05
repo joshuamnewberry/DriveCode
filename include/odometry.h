@@ -28,7 +28,7 @@ class Odometry
 
         double getY();
 
-        double getH();
+        double getH(bool bounded = false);
 
         void setPosition(double ax, double ay);
 
