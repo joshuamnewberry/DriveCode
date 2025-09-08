@@ -1,6 +1,5 @@
 /bin
 /build
 /vex
-compile_commands.json
+/.vscode
 makefile
-.vscode
