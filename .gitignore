@@ -3,3 +3,4 @@
 /vex
 compile_commands.json
 makefile
+.vscode
