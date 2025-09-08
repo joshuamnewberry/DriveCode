@@ -6,7 +6,6 @@ class Odometry
     private:
     
         // Odometry variables:
-        //const int ticks_per_rotation = 3600;
         double x;
         double y;
         double h;
